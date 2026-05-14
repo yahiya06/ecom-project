@@ -19,15 +19,15 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer  id;
+    private Integer id;
     private String name;
     private String description;
     private String brand;
     private BigDecimal price;
     private String category;
     private Date releaseDate;
-    private Boolean available;
-    private Integer  quantity;
+    private Boolean productAvailable;
+    private Integer  stockQuantity;
 
     private String imageName;
     private String imageType;
