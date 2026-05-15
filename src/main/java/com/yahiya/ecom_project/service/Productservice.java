@@ -38,6 +38,7 @@ public class Productservice {
         return repo.save(product);
     }
 
-    public ResponseEntity<String> deleteProduct(int id) {
+    public void deleteProduct(int id) {
+        repo.deleteById(id);
     }
 }
