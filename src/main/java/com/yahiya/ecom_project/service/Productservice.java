@@ -3,6 +3,7 @@ package com.yahiya.ecom_project.service;
 import com.yahiya.ecom_project.model.Product;
 import com.yahiya.ecom_project.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -28,5 +29,15 @@ public class Productservice {
         product.setImageType(imageFile.getContentType());
         product.setImageData(imageFile.getBytes());
         return repo.save(product);
+    }
+
+    public Product updateProduct(int id, Product product, MultipartFile imageFile) throws IOException {
+        product.setImageData(imageFile.getBytes());
+        product.setImageName(imageFile.getOriginalFilename());
+        product.setImageType(imageFile.getContentType());
+        return repo.save(product);
+    }
+
+    public ResponseEntity<String> deleteProduct(int id) {
     }
 }
